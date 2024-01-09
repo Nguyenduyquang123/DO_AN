@@ -1,0 +1,89 @@
+﻿@model DO_AN_PTUD.Models.Product
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<main id="main" class="main">
+                    <h3>Xác nhận sửa </h3>
+
+
+                    <div class="container shadow p-5">
+                        <div class="row pb-2">
+                            <h4>Sửa Sản phẩm</h4>
+                        </div>
+                        <form method="post">
+                            <div asp-validation-summary="All">
+                            </div>
+							<div class="tox-form-group col-md-6">
+									<label asp-for="ProductID">ProductID</label>
+									<input  class="form-control mb-3" asp-for="ProductID" />
+									<span asp-validation-for="ProductID" class="alert-danger"></span>
+							</div>
+							<div class="form-group col-md-12">
+									<label asp-for="Title">Title</label>
+									<input type="text" class="form-control mb-3" asp-for="Title">
+							</div>
+							<div class="from-group col-md-12">
+								<label class="control-label">Images</label>
+								<div class="input-group mb-3">
+									<div class="input-group-prepend">
+											<button class="btn btn-success" type="button" onclick="openDialog()">Choose a pic</button>
+									</div>
+									<input type="text" class="form-control" asp-for="Images" id="file_input" aria-describedby="button-addon2">
+								</div>
+							</div>
+							<div class="form-group col-md-12">
+								<label asp-for="Price">Giá gốc</label>
+								<input type="text" class="form-control mb-3" asp-for="Price">
+							</div>
+							<div class="form-group col-md-12">
+								<label asp-for="Discount">Giá giảm</label>
+								<input type="text" class="form-control mb-3" asp-for="Discount">
+							</div>
+							<div class="form-group col-md-12">
+								<label asp-for="Quantity">Giảm</label>
+								<input type="text" class="form-control mb-3" asp-for="Quantity">
+							</div>
+							<div class="form-group col-md-12">
+								<label asp-for="Contact">Mô tả chi tiết sản phẩm</label>
+								<textarea asp-for="Contact" class="form-control"></textarea>
+							</div>
+							<div class="form-group col-md-12">
+								<label asp-for="Status">Hiển thị</label>
+								<input type="text" class="form-control mb-3" asp-for="Status">
+							</div>
+							<div class="form-group col-md-6">
+							<label asp-for="MenuID">Menu Cha</Label>
+							<select asp-for="MenuID"
+									class="form-control"
+									asp-items="@(new SelectList(ViewBag.mnList, "Value", "Text"))">
+							</select>
+							<span asp-validation-for="MenuID" class="alert-danger"></span>
+							</div>
+							<div class="form-group col-md-6 mt-3 mb-3">
+								<label>
+									@Html.CheckBox("IsActive", false)
+									Hiển thị
+								</label>
+							</div> 
+								<button type="submit" class="btn btn-lg btn-primary p-2"><i class="bi bi-file-pluss-fill"></i>Lưu </button>
+							   <a asp-controller="Product" asp-action="Index" class="btn btn-lg btn-warning p-2">Quay lại</a>
+                        </form>
+                    </div>
+
+</main>
+@{
+	var summerNote = new DO_AN_PTUD.Areas.Admin.Models.SummerNote("#Contact");
+	<partial name="_SummerNote" model="summerNote"/>
+}	
+
+
+								
+								
+								
+
+
+								
+								
+							   
+						

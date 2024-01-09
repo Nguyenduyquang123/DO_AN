@@ -1,0 +1,27 @@
+﻿@model IList<Product>
+@using DO_AN_PTUD.Utilities;
+
+
+
+@foreach (var item in Model)
+{
+        <a href="" class="col l-2-4 container_list">
+            <div class="container_item">
+                <img src="@item.Images" alt="" class="container_item-img">
+                <h5 class="container_item-title">@item.Title</h5>
+                <div class="container_item-pice">
+                    <span class="container_item-pice-seal">@item.Price</span>
+                    <span class="container_item-pice-curent">@item.Discount</span>
+                    <span class="container_item-pice-size">@item.Quantity</span>
+                </div>
+                <span class="container_item-hot">Yêu thích</span>
+                <div class="gift_pro yep" bis_skin_checked="1">
+
+
+                🎁
+                Có <span>&nbsp; 3 &nbsp; </span> lựa chọn quà tặng khi mua hàng
+
+                </div>
+            </div>
+        </a>
+}

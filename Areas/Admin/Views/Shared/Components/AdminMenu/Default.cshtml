@@ -1,0 +1,40 @@
+﻿@using DO_AN_PTUD.Areas.Admin.Models;
+@model IList<AdminMenu>
+
+
+<aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+       
+        @foreach (var item in Model.Where(m => m.ItemLevel == 1).OrderBy(n => n.ItemOrder))
+        {
+            var Pid = item.AdminMenuID;
+
+            var Smenu = Model.Where(p => p.ParentLevel == Pid).OrderBy(p => p.ItemOrder).ToList();
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#@item.ItemTarget" data-bs-toogle="#sidebar-nav" href="/Admin/@item.ControllerName/@item.ActionName">
+                    <i class="@item.Icon"></i> <span>@item.ItemName</span>
+                </a>
+            </li>
+            
+        }
+
+
+        <li class="nav-heading">Pages</li>
+
+        
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="pages-login.html">
+                <i class="bi bi-box-arrow-in-right"></i>
+                <span>Login</span>
+            </a>
+        </li><!-- End Login Page Nav -->
+
+        
+
+    </ul>
+
+</aside><!-- End Sidebar-->

@@ -1,0 +1,90 @@
+﻿<div class="grid wide">
+    <div class="row">
+        <div class="product-band">
+            <p class="product-band-name1">Trang chủ</p>
+            <p><i class="fa-solid fa-chevron-right product-band-icon"></i></p>
+            <p class="product-band-name">Nội thất</p>
+        </div>
+    </div>
+</div>
+<div class="container2">
+    <div class="grid wide">
+        <div class="row">
+            <div class="col l-2">
+                <nav class="category">
+                    <h3 class="category__heading border-bottom">
+                        <i class="category__heading-icon fa-solid fa-list"></i>
+                        <span class="category__heading-name ">Danh Mục</span>
+                    </h3>
+
+                    <ul class="category-list">
+                        <li class="category-item active">
+                            <a href="Dienlanh" class="category-item__link ">Điện máy - điện lạnh</a>
+                        </li>
+                        <li class="category-item">
+                            <a href="Banhoc" class="category-item__link">Bàn ghế học</a>
+                        </li>
+                        <li class="category-item">
+                            <a href="Noithat" class="category-item__link" style="color:orange;">Nội thất</a>
+                        </li>
+                        <li class="category-item">
+                            <a href="Thoitrang" class="category-item__link">Phụ kiện thời trang</a>
+                        </li>
+                        <li class="category-item">
+                            <a href="Sach" class="category-item__link">Sách - tài liệu học tập</a>
+                        </li>
+                        <li class="category-item">
+                            <a href="dodientu.html" class="category-item__link">Đồ điện tử</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="col l-10">
+
+                <div class="grid">
+                    <div class="row">
+                        @await Component.InvokeAsync("Noithat")
+
+
+                    </div>
+                </div>
+
+
+                <ul class="pagination home-product-pagination">
+                    <li class="pagination-item">
+                        <a href="" class="pagination-item_link">
+                            <i class="pagination-item_icon fa-solid fa-angle-left"></i>
+                        </a>
+                    </li>
+                    <li class="pagination-item pagination-item--active">
+                        <a href="" class="pagination-item_link">1</a>
+                    </li>
+                    <li class="pagination-item">
+                        <a href="" class="pagination-item_link">2</a>
+                    </li>
+                    <li class="pagination-item">
+                        <a href="" class="pagination-item_link">3</a>
+                    </li>
+                    <li class="pagination-item">
+                        <a href="" class="pagination-item_link">4</a>
+                    </li>
+                    <li class="pagination-item">
+                        <a href="" class="pagination-item_link">5</a>
+                    </li>
+                    <li class="pagination-item">
+                        <a href="" class="pagination-item_link">...</a>
+                    </li>
+                    <li class="pagination-item">
+                        <a href="" class="pagination-item_link">14</a>
+                    </li>
+
+                    <li class="pagination-item">
+                        <a href="" class="pagination-item_link">
+                            <i class="pagination-item_icon fa-solid fa-angle-right"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,43 @@
+﻿@using DO_AN_PTUD.Models;
+@using DO_AN_PTUD.Utilities;
+@model IList<Post>
+
+    <li class="header_navbar-item">
+        <i class="header_navbar-item--icon fa-regular fa-bell"></i>
+        
+        
+        <a href="" class="header_navbar-item-link">Thông báo</a>
+        
+        <div class="norifill">
+
+            <header class="header__notify-header">
+                Thông Báo Mới Nhận
+            </header>
+            <ul class="header__notify-list">
+            
+
+
+            @foreach (var item in Model)
+             {
+                string url = Functions.TitleSlugGeneration("post", item.Title, item.PostID);
+                <li class="header__notify-item header__notify-item--viewed">
+                    <a href="/@url" class="header__notify-link">
+                        <img src="@item.Images" alt="" class="header__notify-img">
+                        <div class="header__notify-info">
+                            <p class="header__notify-name">@item.Title</p>
+                            <p class="header__notify-descrioton">@item.Contents</p>
+                        </div>
+                    </a>
+                </li>
+              
+                
+            }
+                
+            </ul>
+       
+
+
+        </div>
+    </li>
+
+

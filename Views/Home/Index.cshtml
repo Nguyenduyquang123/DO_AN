@@ -1,0 +1,93 @@
+﻿
+ <div class="content__container">
+                    <h1 class="container-heading">
+                        Sản phẩm nổi bật
+                        <i class="container-heading-btn fa-solid fa-fire"></i>
+                    </h1>
+                    <span class="border-bottom"></span>
+                    <div class="grid wide ">
+                        <div class="row">
+
+                             @await Component.InvokeAsync("Product")
+
+                        </div>
+                    </div>
+                    <span class="sc-hbndou-1 fQYwT">
+                        Xem thêm
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </span>
+
+
+                </div>
+
+                <div class="grid wide ">
+                    <div class="row" style="margin-top: 20px;">
+                        <div class="bander">
+
+                            <a href="" class="col l-4">
+                                <img class="bander-img" src="~/assets/img/banner/bander.jpg" alt="">
+                            </a>
+                        </div>
+                        <a href="" class="col l-4">
+                            <img class="bander-img" src="~/assets/img/banner/banders2.jpg" alt="">
+                        </a>
+
+                        <a href="" class="col l-4">
+                            <img class="bander-img" src="~/assets/img/banner/banders4.jpg" alt="">
+                        </a>
+                    </div>
+                </div>
+
+
+                <div class="content__container-new">
+                    <h1 class="container-heading-new">
+                        Tất cả sản phẩm Sản phẩm
+                    </h1>
+                    <div class="grid wide ">
+
+                        <div class="row">
+
+                           @await Component.InvokeAsync("AllProduct")
+
+
+                        </div>
+
+
+                    </div>
+                </div>
+                <ul class="pagination home-product-pagination">
+                    <li class="pagination-item">
+                        <a href="" class="pagination-item_link">
+                            <i class="pagination-item_icon fa-solid fa-angle-left"></i>
+                        </a>
+                    </li>
+                    <li class="pagination-item pagination-item--active">
+                        <a href="" class="pagination-item_link">1</a>
+                    </li>
+                    <li class="pagination-item">
+                        <a href="" class="pagination-item_link">2</a>
+                    </li>
+                    <li class="pagination-item">
+                        <a href="" class="pagination-item_link">3</a>
+                    </li>
+                    <li class="pagination-item">
+                        <a href="" class="pagination-item_link">4</a>
+                    </li>
+                    <li class="pagination-item">
+                        <a href="" class="pagination-item_link">5</a>
+                    </li>
+                    <li class="pagination-item">
+                        <a href="" class="pagination-item_link">...</a>
+                    </li>
+                    <li class="pagination-item">
+                        <a href="" class="pagination-item_link">14</a>
+                    </li>
+
+                    <li class="pagination-item">
+                        <a href="" class="pagination-item_link">
+                            <i class="pagination-item_icon fa-solid fa-angle-right"></i>
+                        </a>
+                    </li>
+                </ul>
+                
+</div>

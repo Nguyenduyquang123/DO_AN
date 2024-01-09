@@ -1,0 +1,59 @@
+﻿@model IList<Menu>
+@using DO_AN_PTUD.Utilities;
+
+<div class="header-wild-search">
+    <ul class="header-wild-list">
+
+
+
+
+        @foreach (var menu in Model.Where(m => m.Levels == 1).OrderBy(n => n.MenuOrder))
+        {
+            var Pid = menu.MenuID;
+            var Smenu = Model.Where(p => p.ParentID == Pid).OrderBy(p => p.MenuOrder).ToList();
+
+            @if (Smenu.Count == 0)
+            {
+                <li>
+                    <a aria-label="Trang chủ" href="/" class="header-wild-list-item">@menu.MenuName</a>
+                </li>
+            }
+            else
+
+            {
+                <span class="header-boder"></span>
+                <li>
+                    <a href="@menu.link" class="header-wild-list-item">@menu.MenuName  <i class="fa-solid fa-chevron-down"></i></a>
+                    <ul class="subnav">
+                        @foreach (var smn in Smenu)
+                        {
+                            <li>
+                                <a href="@smn.link"><img class="subnav-img" src="@smn.Icon" alt="">@smn.MenuName</a>
+                            </li>
+                        }
+                    </ul>
+                </li>
+               
+
+            }
+           
+
+
+
+        }
+    
+       
+        
+    </ul>
+    <div class="header_search">
+        <input type="text" class="header_search-input" placeholder="Bạn cần tìm gì?">
+        <i class="header_search-icon fa-solid fa-magnifying-glass"></i>
+    </div>
+    <div href class="header_search-post">
+        <a href="dangtin.html" class="header_search-item">
+            Đăng tin
+            <i class="header_search-post-icon fa-solid fa-pen-to-square"></i>
+        </a>
+
+    </div>
+</div>
